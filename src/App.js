@@ -2,6 +2,7 @@ import "./styles/App.css";
 import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
+import { TodoSearch } from "./TodoSearch";
 
 const defaultTodos = [
   { text: "Yoga with Sofie", completed: false },
@@ -12,7 +13,7 @@ const defaultTodos = [
 ];
 function App() {
   return (
-    <fragment>
+    <>
       <h1>🏠 Home</h1>
       <TodoList>
         {defaultTodos.map((todo) => (
@@ -24,7 +25,8 @@ function App() {
         ))}
       </TodoList>
       <CreateTodoButton />
-    </fragment>
+      <TodoSearch />
+    </>
   );
 }
 
