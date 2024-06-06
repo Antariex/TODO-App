@@ -1,0 +1,20 @@
+h4 {
+    font-size: 12px;
+    text-align: left !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    margin-left: 8px;
+    padding: 8px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.completed {
+    color: goldenrod;
+    padding: 4px;
+}
+
+.total {
+    color: #333;
+    font-size: 14px;
+    opacity: 35%;
+}
