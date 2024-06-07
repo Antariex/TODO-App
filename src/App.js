@@ -7,42 +7,58 @@ import { TodoSearch } from "./TodoSearch";
 import { TodoCounter } from "./TodoCounter";
 
 const defaultTodos = [
-  { text: "Yoga with Sofie", completed: true },
-  { text: "Water plants", completed: true },
-  { text: "Package Delivery", completed: false },
-  { text: "Duct Tape", completed: false },
-  { text: "Plan the trip for hollidays", completed: true },
+  { text: "Yoga with Sofie", completed: true, important: false },
+  { text: "Water plants", completed: true, important: false },
+  { text: "Package Delivery", completed: false, important: false },
+  { text: "Duct Tape", completed: false, important: false },
+  { text: "Plan the trip for holidays", completed: true, important: false },
 ];
-function App() {
-  const [todos, setTodos] =
-  React.useState(defaultTodos);
 
-  const completedTodos = todos.filter(todo => !!todo.completed === true).length;
+function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState("");
+
+  const completedTodos = todos.filter((todo) => todo.completed).length;
   const totalTodos = todos.length;
 
-  const [searchValue, setSearchValue] =
-  React.useState("");
+  const toggleCompleteTodo = (text) => {
+    const newTodos = todos.map((todo) => {
+      if (todo.text === text) {
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  };
 
-  console.log('The users search for ' + searchValue);
+  const toggleImportantTodo = (text) => {
+    const newTodos = todos.map((todo) => {
+      if (todo.text === text) {
+        return { ...todo, important: !todo.important };
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  };
 
   return (
     <>
       <h1>🏠 Home</h1>
-      <TodoCounter completed={completedTodos} total={totalTodos}  />
+      <TodoCounter completed={completedTodos} total={totalTodos} />
       <TodoList>
-        {defaultTodos.map((todo) => (
+        {todos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            important={todo.important}
+            toggleCompleteTodo={toggleCompleteTodo}
+            toggleImportantTodo={toggleImportantTodo}
           />
         ))}
       </TodoList>
       <CreateTodoButton />
-      <TodoSearch
-      searchValue={searchValue}
-      setSearchValue={setSearchValue}
-      />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
     </>
   );
 }

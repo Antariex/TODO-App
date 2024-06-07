@@ -1,5 +1,5 @@
 h4 {
-    font-size: 12px;
+    font-size: 0.9em;
     text-align: left !important;
     font-weight: 700 !important;
     color: #fff !important;
@@ -9,7 +9,7 @@ h4 {
 }
 
 .completed {
-    color: goldenrod;
+    color: rgb(41, 196, 41);
     padding: 4px;
 }
 
