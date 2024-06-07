@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles/App.css";
-import { TodoList } from "./TodoList";
-import { TodoItem } from "./TodoItem";
-import { CreateTodoButton } from "./CreateTodoButton";
-import { TodoSearch } from "./TodoSearch";
-import { TodoCounter } from "./TodoCounter";
+import { TodoList } from "./components/TodoList";
+import { TodoItem } from "./components/TodoItem";
+import { CreateTodoButton } from "./components/CreateTodoButton";
+import { TodoSearch } from "./components/TodoSearch";
+import { TodoCounter } from "./components/TodoCounter";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const defaultTodos = [
@@ -22,7 +22,9 @@ function App() {
   const completedTodos = todos.filter((todo) => todo.completed).length;
   const totalTodos = todos.length;
 
-  const searchedTodos = todos.filter((todo) => {return todo.text.toLowerCase().includes(searchValue);});
+  const searchedTodos = todos.filter((todo) => {
+    return todo.text.toLowerCase().includes(searchValue);
+  });
 
   const toggleCompleteTodo = (text) => {
     const newTodos = todos.map((todo) => {

@@ -1,4 +1,4 @@
-import './styles/TodoList.css'
+import '../styles/TodoList.css'
 
 import React from "react";
 
