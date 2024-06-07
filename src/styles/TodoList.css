@@ -1,5 +1,13 @@
 .todolist {
-    margin-top: 16px !important;
+    margin-top: 12px !important;
     padding: 0;
     background-color: transparent;
+    margin: 0 auto !important;
+}
+
+ul {
+    padding-inline-start: 0px !important;
+    padding-inline-end: 0px;
+    width: 98% !important;
+    margin: 0 auto !important;
 }

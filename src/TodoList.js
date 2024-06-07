@@ -1,11 +1,13 @@
 import './styles/TodoList.css'
 
-function TodoList({ children }) {
+import React from "react";
+
+function TodoList(props) {
   return (
-    <ul className='todolist'>
-        {children}
+    <ul ref={props.innerRef} {...props.droppableProps}>
+      {props.children}
     </ul>
-  )
+  );
 }
 
 export { TodoList };

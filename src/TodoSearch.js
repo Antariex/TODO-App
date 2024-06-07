@@ -11,7 +11,6 @@ function TodoSearch({searchValue, setSearchValue}) {
       value={searchValue}
       placeholder="Search a task..."
       onChange={(event) => {
-        console.log('You searched a task!')
         setSearchValue(event.target.value)
       }}
     />

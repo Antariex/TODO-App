@@ -7,18 +7,23 @@
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
 }
 
 li.todoitem {
     margin: 8px;
+    margin-left: 0px !important;
 }
 
 .TodoItem-p {
     font-weight: 550;
     font-size: 0.9em;
     line-height: 1.2;
+    text-align: left;
+    flex-grow: 1;
+    margin-left: 10px;
+    margin-right: 2px;
 }
 
 .TodoItem-p--complete {
@@ -30,8 +35,8 @@ li.todoitem {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    border-radius: 50%;
     border: 1px solid #ccc;
+    margin-left: 5px;
     }
 
 
@@ -48,6 +53,7 @@ li.todoitem {
     position: static;
     margin-top: -6px;
     margin-right: -12px;
+    font-size: 26px;
 }
 
 .star-active {

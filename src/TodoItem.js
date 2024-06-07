@@ -13,7 +13,8 @@ function TodoItem(props) {
     toggleCompleteTodo(text);
   };
 
-  const handleStarClick = () => {
+  const handleStarClick = (event) => {
+    event.stopPropagation();
     toggleImportantTodo(text);
   };
 
