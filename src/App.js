@@ -22,6 +22,8 @@ function App() {
   const completedTodos = todos.filter((todo) => todo.completed).length;
   const totalTodos = todos.length;
 
+  const searchedTodos = todos.filter((todo) => {return todo.text.toLowerCase().includes(searchValue);});
+
   const toggleCompleteTodo = (text) => {
     const newTodos = todos.map((todo) => {
       if (todo.text === text) {
@@ -64,7 +66,7 @@ function App() {
         <Droppable droppableId="todos">
           {(provided) => (
             <TodoList innerRef={provided.innerRef} {...provided.droppableProps}>
-              {todos.map((todo, index) => (
+              {searchedTodos.map((todo, index) => (
                 <Draggable
                   key={todo.text}
                   draggableId={todo.text}
